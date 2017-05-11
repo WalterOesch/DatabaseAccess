@@ -7,16 +7,15 @@ import java.sql.*;
  */
 public class Db {
     private static final String oracleThinConnectionString = "jdbc:oracle:thin:@localhost:1521:xe";
-    private static String connectionString = "jdbc:oracle:thin:@localhost:1521:xe";
-    public static String driver = "jdbc:oracle:thin";
-    public static String host = "localhost";
-    public static String port = "1521";
-    public static String catalog = "xe";
+    private static final String sqlServerEpressConnectionString2 = "jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=abc;integratedSecurity=true";
+    private static final String sqlServerEpressConnectionString = "jdbc:sqlserver://" + "localhost;" + "instance=SQLEXPRESS;databaseName=walter_test;user=walter;password=1234";
+    public static final String mysqlConnectionString = "jdbc:mysql://localhost/test?";
+
+    public static String connectionString = "jdbc:oracle:thin:@localhost:1521:xe";
     public static String username;
     public static String password;
 
     public static ResultSet execute(String query){
-        connectionString = driver + ":@" + host + ":" + port + ":" + catalog;
         ResultSet rs = null;
         try {
 
